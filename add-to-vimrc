@@ -1,0 +1,25 @@
+" General preferences
+" ------------------------------------------------------------------------------
+set tabstop=4
+set shiftwidth=4 
+set smarttab
+set expandtab
+set softtabstop=4
+set autoindent
+
+" I like this theme, you search it in github
+colorscheme 256-jungle
+
+" Taskjuggler
+" ------------------------------------------------------------------------------
+" use <F5> to compile the *.tjp file to create the reports
+autocmd BufNewFile,BufRead *.tjp map <F5> <Esc>:w<CR>:make %<CR>
+" use a template every time you create or read a new *.tjp file 
+" put your template in the ~/.vim/template directory
+autocmd BufNewFile *.tjp 0r ~/.vim/templates/tj.tjp
+" key combinations in insert mode
+imap ;t task <+id+> '<+name+>'{<CR><++><CR>}
+imap ;r resource <+id+> '<+name+>'
+imap ;a account <+id+> '<+name+>'
+
+
