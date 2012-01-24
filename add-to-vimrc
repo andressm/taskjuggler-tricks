@@ -7,7 +7,7 @@ set expandtab
 set softtabstop=4
 set autoindent
 
-" I like this theme, you search it in github
+" I like this theme, you can search it in github
 colorscheme 256-jungle
 
 " Taskjuggler
