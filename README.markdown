@@ -60,8 +60,12 @@ compile with `tj3` to get the updated reports. Here is an example:
 
 ### Installation
 Is quite easy: 
-1. save the file update-costs.py into `~/.vim/bundle/taskjuggler-tricks/`
-2. add to your `~/.vimrc file`:
+
+    mkdir -p ~/.vim/bundle
+    cd ~/.vim/bundle/
+    git clone https://andressm@github.com/andressm/taskjuggler-tricks.git
+
+1. add to your `~/.vimrc file`:
 
     autocmd BufNewFile,BufRead *.tjp map <F6> <Esc>:w<CR>:!python ~/.vim/bundle/taskjuggler-tricks/update-costs.py %<CR>
 
