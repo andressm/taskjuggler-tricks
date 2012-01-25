@@ -14,6 +14,8 @@ colorscheme 256-jungle
 " ------------------------------------------------------------------------------
 " use <F5> to compile the *.tjp file to create the reports
 autocmd BufNewFile,BufRead *.tjp map <F5> <Esc>:w<CR>:make %<CR>
+" use <F6> to update costs with update-costs.py
+autocmd BufNewFile,BufRead *.tjp map <F6> <Esc>:w<CR>:!python ~/.vim/taskjuggler-tricks/update-costs.py %<CR>
 " use a template every time you create or read a new *.tjp file 
 " put your template in the ~/.vim/template directory
 autocmd BufNewFile *.tjp 0r ~/.vim/templates/tj.tjp

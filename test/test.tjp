@@ -1,0 +1,41 @@
+project test 'Test' 2012-01-25 + 6m {
+}
+# macros
+# Project cost: 2015
+macro overhead20 [403]
+
+# accounts
+account costs 'Total Costs'{
+  account runcosts 'Costs'
+  account overhead 'Overhead (20%)'{
+    credits ${projectstart} 'Overhead charge' ${overhead20}
+  }
+}
+
+account payments 'Payments'{
+}
+
+balance costs payments
+
+# resources
+resource tux 'Tux'{
+  rate 100
+}
+
+# task
+task project 'Project test'{
+  chargeset runcosts
+  task test1 'Test1'{
+    effort 1m
+    allocate tux
+  }
+}
+
+# reports
+
+accountreport 'Budget'{
+  formats html
+  balance -
+  columns no, name, balance { title "Total" period ${projectend} + 1h },
+    monthly { celltext 1 "<-query attribute='turnover'->" }
+}
