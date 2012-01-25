@@ -6,7 +6,10 @@ is a excellent project management software.
 ## add-to-vimrc
 This is an extract of my .vimrc file. This file have some shortcuts and my
 preferences to work with
-[Taskjuggler](https://github.com/taskjuggler/TaskJuggler).
+[Taskjuggler](https://github.com/taskjuggler/TaskJuggler). For example this is a
+shortcut to use F5 to compile a tjp project in vim:
+
+    autocmd BufNewFile,BufRead *.tjp map <F5> <Esc>:w<CR>:make %<CR>
 
 ## update-costs 
 In my projects I need to calculate several types of
