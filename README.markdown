@@ -22,14 +22,16 @@ This number is the percent of the administrative cost based in the total
 project cost, and must be in the range 1-100. For now only integer values are
 allowed. Here are an example:
 
+    # Project cost: 00
     macro overhead20 [00]
 
 This mean that administrative cost are 20% of the project cost. It's important
-that the first time you set the macro fill the brackets [] with any number. Now, 
-we need to define an account to credit this macro:
+that the first time you set the macro fill the brackets [] with any number. The
+first line will be also updated but with the project cost. Now, we need to
+define an account to credit this macro:
 
     account overhead 'Overhead (20%)'{ 
-        credit ${projectstart} 'Overhead charge' **${overhead20}**
+        credit ${projectstart} 'Overhead charge' ${overhead20}
     }
 
 So, we need to update de value of the macro based in the project cost which we
@@ -59,7 +61,8 @@ compile with `tj3` to get the updated reports. Here is an example:
 ### Installation
 Is quite easy: 
 1. save the file update-costs.py into `~/.vim/bundle/taskjuggler-tricks/`
-2. add to your `~/.vimrc file:
+2. add to your `~/.vimrc file`:
+
     autocmd BufNewFile,BufRead *.tjp map <F6> <Esc>:w<CR>:!python ~/.vim/bundle/taskjuggler-tricks/update-costs.py %<CR>
 
 So when you want to update the administrative costs in your project, press the
