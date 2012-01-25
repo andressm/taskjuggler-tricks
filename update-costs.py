@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 
-# TODO add support for float percent definition
-# TODO add custom float numbers for project cost input
-
 import re
 import shutil
 import sys
