@@ -68,9 +68,7 @@ Is quite easy:
     cd ~/.vim/bundle/
     git clone https://andressm@github.com/andressm/taskjuggler-tricks.git
 
-1. add to your `~/.vimrc file`:
+Finally add to your `~/.vimrc` file the following lines in order to update
+administrative costs with the F6 key.
 
     autocmd BufNewFile,BufRead *.tjp map <F6> <Esc>:w<CR>:!python ~/.vim/bundle/taskjuggler-tricks/update-costs.py %<CR>
-
-So when you want to update the administrative costs in your project, press the
-F6 key,
